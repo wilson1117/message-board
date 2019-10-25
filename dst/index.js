@@ -9,12 +9,9 @@ var socket_io_1 = __importDefault(require("socket.io"));
 var app = express_1.default();
 var server = http_1.default.createServer(app);
 var socket = socket_io_1.default(server);
-var port = process.env.PORT || 5000;
+var port = 80;
 app.get('/', function (req, res) {
-    res.send("test");
-});
-app.get('index.html', function (req, res) {
-    console.log('test');
+    res.redirect("index.html");
 });
 socket.on("connection", function (req) {
     console.log("Client Connect");
