@@ -6,7 +6,7 @@ var app = express();
 var server = http.createServer(app);
 var socket = io(server);
 
-var port:number = 80;
+var port:number = <number><unknown>process.env.PORT || 5000;
 
 app.get('/', (req,res) => {
     res.redirect("index.html");

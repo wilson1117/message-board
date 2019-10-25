@@ -9,7 +9,7 @@ var socket_io_1 = __importDefault(require("socket.io"));
 var app = express_1.default();
 var server = http_1.default.createServer(app);
 var socket = socket_io_1.default(server);
-var port = 80;
+var port = process.env.PORT || 5000;
 app.get('/', function (req, res) {
     res.redirect("index.html");
 });
