@@ -9,15 +9,16 @@ var socket_io_1 = __importDefault(require("socket.io"));
 var app = express_1.default();
 var server = http_1.default.createServer(app);
 var socket = socket_io_1.default(server);
-var port = process.env.PORT || 5000;
+var port = process.env.PORT || 80;
 app.get('/', function (req, res) {
     res.redirect("index.html");
 });
 socket.on("connection", function (req) {
     console.log("Client Connect");
-    console.log("token: ", req.request.headers.cookie);
 });
-app.use(express_1.default.static('assets'));
+app.use(express_1.default.static('public'));
+app.use('/plugin', express_1.default.static("plugin"));
+app.use('/javascript', express_1.default.static('dst/public'));
 server.listen(port, function () {
     console.log("Server listen at:" + port);
 });

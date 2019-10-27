@@ -6,7 +6,7 @@ var app = express();
 var server = http.createServer(app);
 var socket = io(server);
 
-var port:number = <number><unknown>process.env.PORT || 5000;
+var port:number = <number><unknown>process.env.PORT || 80;
 
 app.get('/', (req,res) => {
     res.redirect("index.html");
@@ -14,10 +14,12 @@ app.get('/', (req,res) => {
 
 socket.on("connection", (req) => {
     console.log("Client Connect");
-    console.log("token: ", req.request.headers.cookie);
+    // console.log("token: ", req.request.headers.cookie);
 });
 
-app.use(express.static('assets'));
+app.use(express.static('public'));
+app.use('/plugin', express.static("plugin"));
+app.use('/javascript', express.static('dst/public'));
 
 
 server.listen(port, () => {
