@@ -21,7 +21,6 @@
     "homepage": "https://github.com/cronus6w6/message-board#readme",
     "dependencies": {
         "@types/node": "^12.11.2",
-        "ejs": "^2.7.1",
         "express": "^4.17.1",
         "node-sass": "^4.13.0",
         "socket.io": "^2.3.0"
