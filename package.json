@@ -6,7 +6,8 @@
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
         "start": "node --harmony ./dst/index.js",
-        "serve": "tsc && node ./dst/index.js"
+        "serve": "tsc && node ./dst/index.js",
+        "build-css": "node-sass -rw public/scss -o public/css"
     },
     "repository": {
         "type": "git",
@@ -20,7 +21,9 @@
     "homepage": "https://github.com/cronus6w6/message-board#readme",
     "dependencies": {
         "@types/node": "^12.11.2",
+        "ejs": "^2.7.1",
         "express": "^4.17.1",
+        "node-sass": "^4.13.0",
         "socket.io": "^2.3.0"
     },
     "devDependencies": {
