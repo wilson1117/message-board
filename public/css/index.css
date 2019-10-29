@@ -28,7 +28,8 @@ body {
       justify-content: space-around;
       flex-direction: column; }
       body #container #body > :first-child {
-        font-size: 40px; }
+        font-size: 40px;
+        margin-top: 50px; }
       body #container #body > :nth-child(2) {
         background: #FFEEE4;
         height: 60px;
@@ -51,7 +52,15 @@ body {
           border-left: solid 5px #CE6D39;
           background: #F17F42;
           font-size: 41px;
+          cursor: pointer;
           text-align: center; }
           body #container #body > :nth-child(2) div i {
             font-weight: 600;
             color: white; }
+      body #container #body > :nth-child(3) {
+        margin-top: -50px;
+        width: 80%; }
+        body #container #body > :nth-child(3) i {
+          float: right;
+          font-size: 50px;
+          color: rgba(0, 0, 0, 0.4); }
