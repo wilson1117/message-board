@@ -16,6 +16,10 @@ app.get('/', function (req, res) {
 socket.on("connection", function (req) {
     console.log("Client Connect");
 });
+app.get('/get_token', function (req, res) {
+    console.log(req.ips);
+    res.end();
+});
 app.use(express_1.default.static('public'));
 app.use('/plugin', express_1.default.static("plugin"));
 app.use('/javascript', express_1.default.static('dst/public'));

@@ -17,6 +17,11 @@ socket.on("connection", (req) => {
     // console.log("token: ", req.request.headers.cookie);
 });
 
+app.get('/get_token', (req, res) => {
+    console.log(req.ips);
+    res.end();
+});
+
 app.use(express.static('public'));
 app.use('/plugin', express.static("plugin"));
 app.use('/javascript', express.static('dst/public'));
